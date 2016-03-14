@@ -1,0 +1,185 @@
+GXBB:BL1:08dafd:0a8993;FEAT:EDFC318C;POC:3;RCY:0;EMMC:800;NAND:81;SD:0;READ:0;CHK:0;
+TE: 212414
+no sdio debug board detected 
+
+BL2 Built : 11:44:26, Nov 25 2015. 
+gxb gfb13a3b-c2 - jcao@wonton
+
+Board ID = 8
+set vcck to 1100 mv
+set vddee to 1050 mv
+CPU clk: 1536MHz
+DDR channel setting: DDR0 Rank0+1 same
+DDR0: 2048MB(auto) @ 912MHz(2T)-13
+DataBus test pass!
+AddrBus test pass!
+Load fip header from SD, src: 0x0000c200, des: 0x01400000, size: 0x000000b0
+Load bl30 from SD, src: 0x00010200, des: 0x01000000, size: 0x00009ef0
+Sending bl30........................................OK. 
+Run bl30...
+Load bl301 from SD, src: 0x0001c200, des: 0x01000000, size: 0x00001690
+Wait bl30...Done
+Sending bl301......OK. 
+Run bl301...
+m SD, src: 0x00020200, des: 0x10100000, size: 0x00011130
+
+
+--- UART initialized after reboot ---
+[Reset cause: unknown]
+[Image: unknown, amlogic_v1.1.3046-00db630 2015-10-28 15:24:31 xiaobo.gu@droid05]
+bl30: check_permit, count is 1
+bl30: check_permit: ok!
+chipid: ef beLoad bl33 from SD, src: 0x00034200, des: 0x01000000, size: 0x00066e30
+ ad de d f0 ad ba ef be ad de not ES chip
+[0.326615 Inits done]
+secure task start!
+high task start!
+low task start!
+NOTICE:  BL3-1: v1.0(debug):4d2e34d
+NOTICE:  BL3-1: Built : 17:08:35, Oct 29 2015
+INFO:    BL3-1: Initializing runtime services
+INFO:    BL3-1: Preparing for EL3 exit to normal world
+INFO:    BL3-1: Next image address = 0x1000000
+INFO:    BL3-1: Next image spsr = 0x3c9
+
+
+U-Boot 2015.01-00075-g73f44ad (Feb 23 2016 - 23:38:22)
+
+DRAM:  2 GiB
+Relocation Offset is: 76f3f000
+-------------------------------------------------
+* Welcome to Hardkernel's ODROID-C2
+-------------------------------------------------
+CPU : AMLogic S905
+S/N : HKC213254DFCC334
+MAC : 00:1e:06:33:0f:b4
+BID : HKC2211602
+-------------------------------------------------
+register usb cfg[1][0] = 0000000077f985f0
+register usb cfg[0][1] = 0000000077f98610
+vpu detect type: 5
+vpu clk_level = 7
+set vpu clk: 666667000Hz, readback: 666660000Hz(0x300)
+MMC:   aml_priv->desc_buf = 0x0000000073f37d30
+aml_priv->desc_buf = 0x0000000073f39ec0
+SDIO Port B: 0, SDIO Port C: 1
+ret = 1 .[mmc_init] mmc init success
+In:    serial
+Out:   serial
+Err:   serial
+reading boot-logo.bmp.gz
+** Unable to read file boot-logo.bmp.gz **
+reading boot-logo.bmp
+** Unable to read file boot-logo.bmp **
+movi: the partiton 'logo' is reading...
+
+MMC read: dev # 0, block # 58976, count 4096 ... 4096 blocks read: OK
+hpd_state=0
+[CANVAS]addr=0x3f800000 width=3840, height=1440
+
+Not find '576cvbs' mapped VIC
+Not find '576cvbs' mapped VIC
+Error: Bad gzipped data
+There is no valid bmp file at the given address
+Saving Environment to MMC...
+Writing to MMC(0)... done
+Net:   Meson_Ethernet
+Hit [Enter] key twice to stop autoboot:  0 
+reading boot.ini
+1668 bytes read in 3 ms (543 KiB/s)
+cfgload: applying boot.ini...
+cfgload: setenv m "1080p60hz" # Progressive 60Hz
+cfgload: setenv m_bpp "32"
+cfgload: setenv condev "console=ttyS0,115200n8 console=tty0"   # on both
+cfgload: setenv xen_bootargs "sync_console console=dtuart dtuart=/serial@c81004c0 earlyprintk=xen dom0_mem=512M dom0_max_vcpus=2 dom0_vcpus_pin"
+cfgload: setenv dom0_bootargs "console=hvc0 earlyprintk debug root=/dev/mmcblk0p2 rootwait rw hdmimode=${m} m_bpp=${m_bpp} vout=${vout} fsck.fix=yes"
+cfgload: setenv dtb_loadaddr      "0x10000000"
+cfgload: setenv xen_loadaddr     "0x11000000"
+cfgload: setenv kernel_loadaddr "0x12000000"
+cfgload: setenv initrd_loadaddr   "0x13000000"
+cfgload: fatload mmc 0:1 ${dtb_loadaddr} meson64_odroidc2.dtb
+reading meson64_odroidc2.dtb
+27013 bytes read in 5 ms (5.2 MiB/s)
+cfgload: fatload mmc 0:1 ${xen_loadaddr} xen-uImage
+reading xen-uImage
+788032 bytes read in 38 ms (19.8 MiB/s)
+cfgload: fatload mmc 0:1 ${initrd_loadaddr} uInitrd
+reading uInitrd
+8304509 bytes read in 379 ms (20.9 MiB/s)
+cfgload: fatload mmc 0:1 ${kernel_loadaddr} Image
+reading Image
+12763368 bytes read in 571 ms (21.3 MiB/s)
+cfgload: setenv kernel_size 0x$filesize
+cfgload: fdt addr ${dtb_loadaddr}
+cfgload: fdt resize
+cfgload: fdt mknod / chosen
+cfgload: fdt set /chosen xen,xen-bootargs \"${xen_bootargs}\"
+cfgload: fdt set /chosen xen,dom0-bootargs \"${dom0_bootargs}\"
+cfgload: fdt mknod /chosen modules
+cfgload: fdt set /chosen/modules '#address-cells' <1>
+cfgload: fdt set /chosen/modules '#size-cells' <1>
+cfgload: fdt mknode /chosen/modules module@0
+cfgload: fdt set /chosen/modules/module@0 compatible xen,linux-zimage xen,multiboot-module
+cfgload: fdt set /chosen/modules/module@0 reg <${kernel_loadaddr} ${kernel_size}>
+cfgload: fdt print /chosen
+chosen {
+        xen,dom0-bootargs = "console=hvc0 earlyprintk debug root=/dev/mmcblk0p2 rootwait rw hdmimode=1080p60hz m_bpp=32 vout= fsck.fix=yes";
+        xen,xen-bootargs = "sync_console console=dtuart dtuart=/serial@c81004c0 earlyprintk=xen dom0_mem=512M dom0_max_vcpus=2 dom0_vcpus_pin";
+        modules {
+                #size-cells = <0x00000001>;
+                #address-cells = <0x00000001>;
+                module@0 {
+                        reg = <0x12000000 0x00c2c0e8>;
+                        compatible = "xen,linux-zimage", "xen,multiboot-module";
+                };
+        };
+};
+cfgload: bootm ${xen_loadaddr} - ${dtb_loadaddr}
+ee_gate_off ...
+## Booting kernel from Legacy Image at 11000000 ...
+   Image Name:   
+   Image Type:   AArch64 Linux Kernel Image (uncompressed)
+   Data Size:    787968 Bytes = 769.5 KiB
+   Load Address: 11000000
+   Entry Point:  11000000
+   Verifying Checksum ... OK
+load dtb from 0x1000000 ......
+## Flattened Device Tree blob at 10000000
+   Booting using the fdt blob at 0x10000000
+   Loading Kernel Image ... OK
+   kernel loaded at 0x11000000, end = 0x110c0600
+   reserving fdt memory region: addr=10000000 size=7000
+   Loading Device Tree to 000000001fff6000, end 000000001fffffff ... OK
+
+Starting kernel ...
+
+uboot time: 4617583 us
+- UART enabled -
+- CPU 00000000 booting -
+- Current EL 00000008 -
+- Xen starting at EL2 -
+- Zero BSS -
+- Setting up control registers -
+- Turning on paging -
+- Ready -
+(XEN) Checking for initrd in /chosen
+(XEN) RAM: 0000000000000000 - 0000000077ffffff
+(XEN) 
+(XEN) MODULE[0]: 000000001fff6000 - 000000001fffd000 Device Tree  
+(XEN) MODULE[1]: 0000000012000000 - 0000000012c2c0e8 Kernel       
+(XEN)  RESVD[0]: 0000000010000000 - 0000000010007000
+(XEN)  RESVD[1]: 000000001fff6000 - 000000001fffd000
+(XEN) 
+(XEN) Command line: sync_console console=dtuart dtuart=/serial@c81004c0 earlyprintk=xen dom0_mem=512M dom0_max_vcpus=2 dom0_vcpus_pin
+(XEN) Placing Xen at 0x0000000077e00000-0x0000000078000000
+(XEN) Update BOOTMOD_XEN from 0000000011000000-000000001110ce01 => 0000000077e00000-0000000077f0ce01
+(XEN) Domain heap initialised
+(XEN) Platform: MESON
+(XEN) 
+(XEN) ****************************************
+(XEN) Panic on CPU 0:
+(XEN) Unable to find a compatible timer in the device tree
+(XEN) ****************************************
+(XEN) 
+(XEN) Reboot in five seconds...
+

@@ -1,0 +1,321 @@
+GXBB:BL1:08dafd:0a8993;FEAT:EDFC318C;POC:3;RCY:0;EMMC:800;NAND:81;SD:0;READ:0;CHK:0;
+TE: 209602
+no sdio debug board detected 
+
+BL2 Built : 11:44:26, Nov 25 2015. 
+gxb gfb13a3b-c2 - jcao@wonton
+
+Board ID = 8
+set vcck to 1100 mv
+set vddee to 1050 mv
+CPU clk: 1536MHz
+DDR channel setting: DDR0 Rank0+1 same
+DDR0: 2048MB(auto) @ 912MHz(2T)-13
+DataBus test pass!
+AddrBus test pass!                                                                               
+Load fip header from SD, src: 0x0000c200, des: 0x01400000, size: 0x000000b0                      
+Load bl30 from SD, src: 0x00010200, des: 0x01000000, size: 0x00009ef0                            
+Sending bl30........................................OK.                                          
+Run bl30...                                                                                      
+Load bl301 from SD, src: 0x0001c200, des: 0x01000000, size: 0x00001690                           
+Wait bl30...Done                                                                                 
+Sending bl301......OK.                                                                           
+Run bl301...                                                                                     
+from SD, src: 0x00020200, des: 0x10100000, size: 0x00011130                                      
+                                                                                                 
+                                                                                                 
+--- UART initialized after reboot ---                                                            
+[Reset cause: unknown]                                                                           
+[Image: unknown, amlogic_v1.1.3046-00db630 2015-10-28 15:24:31 xiaobo.gu@droid05]                
+bl30: check_permit, count is 1                                                                   
+bl30: check_permit: ok!                                                                          
+chipid: ef beLoad bl33 from SD, src: 0x00034200, des: 0x01000000, size: 0x00066e30               
+ ad de d f0 ad ba ef be ad de not ES chip                                                        
+[0.323798 Inits done]                                                                            
+secure task start!                                                                               
+high task start!                                                                                 
+low task start!                                                                                  
+NOTICE:  BL3-1: v1.0(debug):4d2e34d                                                              
+NOTICE:  BL3-1: Built : 17:08:35, Oct 29 2015                                                    
+INFO:    BL3-1: Initializing runtime services                                                    
+INFO:    BL3-1: Preparing for EL3 exit to normal world                                           
+INFO:    BL3-1: Next image address = 0x1000000                                                   
+INFO:    BL3-1: Next image spsr = 0x3c9                                                          
+                                                                                                 
+                                                                                                 
+U-Boot 2015.01-00075-g73f44ad (Feb 23 2016 - 23:38:22)                                           
+                                                                                                 
+DRAM:  2 GiB                                                                                     
+Relocation Offset is: 76f3f000                                                                   
+-------------------------------------------------                                                
+* Welcome to Hardkernel's ODROID-C2                                                              
+-------------------------------------------------                                                
+CPU : AMLogic S905                                                                               
+S/N : HKC213254DFCC334                                                                           
+MAC : 00:1e:06:33:0f:b4                                                                          
+BID : HKC2211602                                                                                 
+-------------------------------------------------                                                
+register usb cfg[1][0] = 0000000077f985f0                                                        
+register usb cfg[0][1] = 0000000077f98610                                                        
+vpu detect type: 5                                                                               
+vpu clk_level = 7                                                                                
+set vpu clk: 666667000Hz, readback: 666660000Hz(0x300)                                           
+MMC:   aml_priv->desc_buf = 0x0000000073f37d30                                                   
+aml_priv->desc_buf = 0x0000000073f39ec0                                                          
+SDIO Port B: 0, SDIO Port C: 1                                                                   
+ret = 1 .[mmc_init] mmc init success                                                             
+In:    serial                                                                                    
+Out:   serial                                                                                    
+Err:   serial                                                                                    
+reading boot-logo.bmp.gz                                                                         
+** Unable to read file boot-logo.bmp.gz **                                                       
+reading boot-logo.bmp                                                                            
+** Unable to read file boot-logo.bmp **                                                          
+movi: the partiton 'logo' is reading...                                                          
+                                                                                                 
+MMC read: dev # 0, block # 58976, count 4096 ... 4096 blocks read: OK                            
+hpd_state=0                                                                                      
+[CANVAS]addr=0x3f800000 width=3840, height=1440                                                  
+                                                                                                 
+Not find '576cvbs' mapped VIC                                                                    
+Not find '576cvbs' mapped VIC                                                                    
+Error: Bad gzipped data                                                                          
+There is no valid bmp file at the given address                                                  
+Saving Environment to MMC...                                                                     
+Writing to MMC(0)... done                                                                        
+Net:   Meson_Ethernet                                                                            
+Hit [Enter] key twice to stop autoboot:  0                                                       
+reading boot.ini                                                                                 
+1668 bytes read in 3 ms (543 KiB/s)                                                              
+cfgload: applying boot.ini...                                                                    
+cfgload: setenv m "1080p60hz" # Progressive 60Hz                                                 
+cfgload: setenv m_bpp "32"                                                                       
+cfgload: setenv condev "console=ttyS0,115200n8 console=tty0"   # on both                         
+cfgload: setenv xen_bootargs "sync_console console=dtuart dtuart=/serial@c81004c0 earlyprintk=xe"
+cfgload: setenv dom0_bootargs "console=hvc0 earlyprintk debug root=/dev/mmcblk0p2 rootwait rw hd"
+cfgload: setenv dtb_loadaddr      "0x10000000"                                                   
+cfgload: setenv xen_loadaddr     "0x11000000"                                                    
+cfgload: setenv kernel_loadaddr "0x12000000"                                                     
+cfgload: setenv initrd_loadaddr   "0x13000000"                                                   
+cfgload: fatload mmc 0:1 ${dtb_loadaddr} meson64_odroidc2.dtb                                    
+reading meson64_odroidc2.dtb                                                                     
+25918 bytes read in 5 ms (4.9 MiB/s)                                                             
+cfgload: fatload mmc 0:1 ${xen_loadaddr} xen-uImage                                              
+reading xen-uImage                                                                               
+788032 bytes read in 39 ms (19.3 MiB/s)                                                          
+cfgload: fatload mmc 0:1 ${initrd_loadaddr} uInitrd                                              
+reading uInitrd                                                                                  
+8304509 bytes read in 378 ms (21 MiB/s)                                                          
+cfgload: fatload mmc 0:1 ${kernel_loadaddr} Image                                                
+reading Image                                                                                    
+12763368 bytes read in 572 ms (21.3 MiB/s)                                                       
+cfgload: setenv kernel_size 0x$filesize                                                          
+cfgload: fdt addr ${dtb_loadaddr}                                                                
+cfgload: fdt resize                                                                              
+cfgload: fdt mknod / chosen                                                                      
+cfgload: fdt set /chosen xen,xen-bootargs \"${xen_bootargs}\"                                    
+cfgload: fdt set /chosen xen,dom0-bootargs \"${dom0_bootargs}\"                                  
+cfgload: fdt mknod /chosen modules                                                               
+cfgload: fdt set /chosen/modules '#address-cells' <1>                                            
+cfgload: fdt set /chosen/modules '#size-cells' <1>                                               
+cfgload: fdt mknode /chosen/modules module@0                                                     
+cfgload: fdt set /chosen/modules/module@0 compatible xen,linux-zimage xen,multiboot-module       
+cfgload: fdt set /chosen/modules/module@0 reg <${kernel_loadaddr} ${kernel_size}>                
+cfgload: fdt print /chosen                                                                       
+chosen {                                                                                         
+        xen,dom0-bootargs = "console=hvc0 earlyprintk debug root=/dev/mmcblk0p2 rootwait rw hdmi;
+        xen,xen-bootargs = "sync_console console=dtuart dtuart=/serial@c81004c0 earlyprintk=xen ;
+        modules {                                                                                
+                #size-cells = <0x00000001>;                                                      
+                #address-cells = <0x00000001>;                                                   
+                module@0 {                                                                       
+                        reg = <0x12000000 0x00c2c0e8>;                                           
+                        compatible = "xen,linux-zimage", "xen,multiboot-module";                 
+                };                                                                               
+        };                                                                                       
+};                                                                                               
+cfgload: bootm ${xen_loadaddr} - ${dtb_loadaddr}                                                 
+ee_gate_off ...                                                                                  
+## Booting kernel from Legacy Image at 11000000 ...                                              
+   Image Name:                                                                                   
+   Image Type:   AArch64 Linux Kernel Image (uncompressed)                                       
+   Data Size:    787968 Bytes = 769.5 KiB                                                        
+   Load Address: 11000000                                                                        
+   Entry Point:  11000000                                                                        
+   Verifying Checksum ... OK                                                                     
+load dtb from 0x1000000 ......                                                                   
+## Flattened Device Tree blob at 10000000                                                        
+   Booting using the fdt blob at 0x10000000                                                      
+   Loading Kernel Image ... OK                                                                   
+   kernel loaded at 0x11000000, end = 0x110c0600                                                 
+   reserving fdt memory region: addr=10000000 size=7000                                          
+   Loading Device Tree to 000000001fff6000, end 000000001fffffff ... OK                          
+                                                                                                 
+Starting kernel ...                                                                              
+                                                                                                 
+uboot time: 4610198 us                                                                           
+- UART enabled -                                                                                 
+- CPU 00000000 booting -                                                                         
+- Current EL 00000008 -                                                                          
+- Xen starting at EL2 -                                                                          
+- Zero BSS -                                                                                     
+- Setting up control registers -                                                                 
+- Turning on paging -                                                                            
+- Ready -                                                                                        
+(XEN) Checking for initrd in /chosen                                                             
+(XEN) RAM: 0000000000000000 - 0000000077ffffff                                                   
+(XEN)                                                                                            
+(XEN) MODULE[0]: 000000001fff6000 - 000000001fffd000 Device Tree                                 
+(XEN) MODULE[1]: 0000000012000000 - 0000000012c2c0e8 Kernel                                      
+(XEN)  RESVD[0]: 0000000010000000 - 0000000010007000                                             
+(XEN)  RESVD[1]: 000000001fff6000 - 000000001fffd000                                             
+(XEN)                                                                                            
+(XEN) Command line: sync_console console=dtuart dtuart=/serial@c81004c0 earlyprintk=xen dom0_memn
+(XEN) Placing Xen at 0x0000000077e00000-0x0000000078000000                                       
+(XEN) Update BOOTMOD_XEN from 0000000011000000-000000001110ce01 => 0000000077e00000-0000000077f01
+(XEN) Domain heap initialised                                                                    
+(XEN) Platform: MES/Xen 4.7-unstable                                                             
+(XEN) Xen version 4.7-unstable (nobe@) (aarch64-linux-gnu-gcc (Ubuntu 5.2.1-22ubuntu1) 5.2.1 2016
+(XEN) Latest ChangeSet: Wed Mar 9 19:46:05 2016 +0900 git:9fc164f                                
+(XEN) Console output is synchronous.                                                             
+(XEN) Processor: 410fd034: "ARM Limited", variant: 0x0, part 0xd03, rev 0x4                      
+(XEN) 64-bit Execution:                                                                          
+(XEN)   Processor Features: 0000000000002222 0000000000000000                                    
+(XEN)     Exception Levels: EL3:64+32 EL2:64+32 EL1:64+32 EL0:64+32                              
+(XEN)     Extensions: FloatingPoint AdvancedSIMD                                                 
+(XEN)   Debug Features: 0000000010305106 0000000000000000                                        
+(XEN)   Auxiliary Features: 0000000000000000 0000000000000000                                    
+(XEN)   Memory Model Features: 0000000000001122 0000000000000000                                 
+(XEN)   ISA Features:  0000000000010000 0000000000000000                                         
+(XEN) 32-bit Execution:                                                                          
+(XEN)   Processor Features: 00000131:00011011                                                    
+(XEN)     Instruction Sets: AArch32 A32 Thumb Thumb-2 Jazelle                                    
+(XEN)     Extensions: GenericTimer Security                                                      
+(XEN)   Debug Features: 03010066                                                                 
+(XEN)   Auxiliary Features: 00000000                                                             
+(XEN)   Memory Model Features: 10201105 40000000 01260000 02102211                               
+(XEN)  ISA Features: 02101110 13112111 21232042 01112131 00011142 00010001                       
+(XEN) Using PSCI-0.1 for SMP bringup                                                             
+(XEN) Generic Timer IRQ: phys=46 hyp=42 virt=43 Freq: 24000 KHz                                  
+(XEN) GICv2 initialization:                                                                      
+(XEN)         gic_dist_addr=00000000c4301000                                                     
+(XEN)         gic_cpu_addr=00000000c4302000                                                      
+(XEN)         gic_hyp_addr=00000000c4304000                                                      
+(XEN)         gic_vcpu_addr=00000000c4306000                                                     
+(XEN)         gic_maintenance_irq=25                                                             
+(XEN) GICv2: 256 lines, 4 cpus, secure (IID 0200143b).                                           
+(XEN) Using scheduler: SMP Credit Scheduler (credit)                                             
+(XEN) Allocated console ring of 32 KiB.                                                          
+(XEN) Bringing up CPU1                                                                           
+- CPU 00000001 booting -                                                                         
+- Current EL 00000008 -                                                                          
+- Xen starting at EL2 -                                                                          
+- Setting up control registers -                                                                 
+- Turning on paging -                                                                            
+- Ready -                                                                                        
+(XEN) CPU 1 booted.                                                                              
+(XEN) Bringing up CPU2                                                                           
+- CPU 00000002 booting -                                                                         
+- Current EL 00000008 -                                                                          
+- Xen starting at EL2 -                                                                          
+- Setting up control registers -                                                                 
+- Turning on paging -                                                                            
+- Ready -                                                                                        
+(XEN) CPU 2 booted.                                                                              
+(XEN) Bringing up CPU3                                                                           
+- CPU 00000003 booting -                                                                         
+- Current EL 00000008 -                                                                          
+- Xen starting at EL2 -                                                                          
+- Setting up control registers -                                                                 
+- Turning on paging -                                                                            
+- Ready -                                                                                        
+(XEN) CPU 3 booted.                                                                              
+(XEN) Brought up 4 CPUs                                                                          
+(XEN) P2M: 40-bit IPA with 40-bit PA                                                             
+(XEN) P2M: 3 levels with order-1 root, VTCR 0x80023558                                           
+(XEN) I/O virtualisation disabled                                                                
+(XEN) *** LOADING DOMAIN 0 ***                                                                   
+(XEN) Loading kernel from boot module @ 0000000012000000                                         
+(XEN) Allocating 1:1 mappings totalling 512MB for dom0:                                          
+(XEN) BANK[0] 0x00000020000000-0x00000040000000 (512MB)                                          
+(XEN) Grant table range: 0x00000077e00000-0x00000077e5c000                                       
+(XEN) Loading zImage from 0000000012000000 to 0000000021080000-0000000021cac0e8                  
+(XEN) Allocating PPI 16 for event channel interrupt                                              
+(XEN) Loading dom0 DTB to 0x0000000028000000-0x0000000028006393                                  
+(XEN) Scrubbing Free RAM on 1 nodes using 4 CPUs                                                 
+(XEN) Bad mode in Error handler detected                                                         
+(XEN) ESR=0xbf000000:  EC=2f, IL=1, ISS=1000000                                                  
+(XEN) ----[ Xen-4.7-unstable  arm64  debug=y  Tainted:    C ]----                                
+(XEN) CPU:    0                                                                                  
+(XEN) PC:     000000000025bd10 memset+0x110/0x200                                                
+(XEN) LR:     000000000021bc14                                                                   
+(XEN) SP:     00000000002bfcb0                                                                   
+(XEN) CPSR:   200002c9 MODE:64-bit EL2h (Hypervisor, handler)                                    
+(XEN)      X0: 0000800000000000  X1: 00000000000000c2  X2: 0000000000000cc0                      
+(XEN)      X3: 0000000000000000  X4: 0000000000000000  X5: 00000000002a0128                      
+(XEN)      X6: 0000000000000002  X7: c2c2c2c2c2c2c2c2  X8: 00008000000002f0                      
+(XEN)      X9: 000000000000000a X10: 00000000002bfb38 X11: 0000000000000034                      
+(XEN)     X12: 0000000000000001 X13: 0000000000262dc0 X14: 0000000000000020                      
+(XEN)     X15: 0000000000000000 X16: 0000000000000000 X17: 0000000000000000                      
+(XEN)     X18: 0000000073f36e28 X19: 0000000000000000 X20: 0000000000000000                      
+(XEN)     X21: 0000000000008000 X22: 000000000027eb10 X23: 000000000027f000                      
+(XEN)     X24: 000000000027e000 X25: 000000000027e000 X26: 0000000800000000                      
+(XEN)     X27: 0000000000000000 X28: 0000000000000001  FP: 00000000002bfcb0                      
+(XEN)                                                                                            
+(XEN)   VTCR_EL2: 80023558                                                                       
+(XEN)  VTTBR_EL2: 0001000077f68000                                                               
+(XEN)                                                                                            
+(XEN)  SCTLR_EL2: 30cd183d                                                                       
+(XEN)    HCR_EL2: 000000000038643f                                                               
+(XEN)  TTBR0_EL2: 0000000077ef6000                                                               
+(XEN)                                                                                            
+(XEN)    ESR_EL2: bf000000                                                                       
+(XEN)  HPFAR_EL2: 0000000003a44690                                                               
+(XEN)    FAR_EL2: 005e04e260341520                                                               
+(XEN)                                                                                            
+(XEN) Xen stack trace from sp=00000000002bfcb0:                                                  
+(XEN)    00000000002bfcc0 0000000000282064 00000000002bfd20 000000000022b194                     
+(XEN)    0000000000000000 0000000000281ea0 0000000000000000 0000000000000000                     
+(XEN)    0000000000000001 0000000000000004 00000000002a8098 0000000000000000                     
+(XEN)    0000000078000000 0000000000247324 00000000002bfd50 0000000000250aec                     
+(XEN)    000000000030cd18 00000000002cff98 0000000000281ea0 0000000000250aac                     
+(XEN)    00000000002bfd80 000000000022b024 00000000002cff98 00000000002bfe00                     
+(XEN)    000000000000000e 0000000000000000 00000000002bfdc0 0000000000281960                     
+(XEN)    0000000000000000 000000000027d110 00000000002a0078 000000000001e000                     
+(XEN)    0000000000281ea0 0000000000281944 00000000002bfe20 000000000028e700                     
+(XEN)    0000800077f21000 000000000027da00 0000000000306450 0000000000000080                     
+(XEN)    0000000000279df8 0000000000000004 000000000000000f 0000000000000000                     
+(XEN)    000000000000000f 0000000000000000 0000000077f45900 000000000020061c                     
+(XEN)    0000000011000000 0000000010e00000 000000001fff6000 0000000000000000                     
+(XEN)    00000000004004c0 0000000000000000 0000000000000001 0000000073f3de98                     
+(XEN)    0000000077f9c030 0000000000000000 0000000000000000 000000001fff6000                     
+(XEN)    0000000000007000 0000000078000000 000000e000000001 0000000000000000                     
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000                     
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000                     
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000                     
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000                     
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000                     
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000                     
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000                     
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000                     
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000                     
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000                     
+(XEN)    0000000000000000 0000000000000000                                                       
+(XEN) Xen call trace:                                                                            
+(XEN)    [<000000000025bd10>] memset+0x110/0x200 (PC)                                            
+(XEN)    [<000000000021bc14>] scrub_one_page+0xbc/0xc8 (LR)                                      
+(XEN)    [<0000000000282064>] page_alloc.c#smp_scrub_heap_pages+0x1c4/0x1ec                      
+(XEN)    [<000000000022b194>] smp_call_function_interrupt+0xa4/0x140                             
+(XEN)    [<0000000000250aec>] smp_send_call_function_mask+0x98/0xa8                              
+(XEN)    [<000000000022b024>] on_selected_cpus+0x88/0xd4                                         
+(XEN)    [<0000000000281960>] scrub_heap_pages+0x1b8/0x494                                       
+(XEN)    [<000000000028e700>] start_xen+0xbec/0xce0                                              
+(XEN)    [<000000000020061c>] arm64/head.o#paging+0x84/0xbc                                      
+(XEN)                                                                                            
+(XEN)                                                                                            
+(XEN) ****************************************                                                   
+(XEN) Panic on CPU 0:                                                                            
+(XEN) bad mode                                                                                   
+(XEN) ****************************************                                                   
+(XEN)                                                                                            
+(XEN) Reboot in five seconds...     
