@@ -1,9 +1,7 @@
-nobe@lenovo-e540:~/Documents/DEV/ARM/odroid-c2/xen$ addr2line  -C -f -e xen/xen-syms  0x000000000025bd10
+nobe@lenovo:~/xen$ addr2line  -C -f -e xen/xen-syms  0x000000000025bd10
 memset
-/home/nobe/Documents/DEV/ARM/odroid-c2/xen/xen/arch/arm/arm64/lib/memset.S:136
+/home/nobe/xen/xen/arch/arm/arm64/lib/memset.S:136
 
-nobe@lenovo-e540:~/Documents/DEV/ARM/odroid-c2/xen$ addr2line  -C -f -e xen/xen-syms  0x000000000021bc14
+nobe@lenovo:~/xen$ addr2line  -C -f -e xen/xen-syms  0x000000000021bc14
 scrub_one_page
-/home/nobe/Documents/DEV/ARM/odroid-c2/xen/xen/common/page_alloc.c:1972
-
-
+/home/nobe/xen/xen/common/page_alloc.c:1972
