@@ -8,7 +8,7 @@
 
 ## timer
 
-meson : currently upstream timer  
+meson : current upstream timer  
 
 26_30 : means that the IRQs tested for the timer are between 26 and 30  
 10_14 : means that the IRQs tested for the timer are between 10 and 14  
@@ -18,7 +18,7 @@ ff08 : IRQ type level low
 
 ## gic
 
-meson   : currently upstream gic  
+meson   : current upstream gic  
 
 400_c43 : gic: interrupt-controller@c4301000 {  compatible = "arm,gic-400";  
 400_2c  : gic: interrupt-controller@2c001000 {  compatible = "arm,gic-400";  
