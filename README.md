@@ -1,9 +1,10 @@
 # odroid-c2
 
-## Files
-.log files are output of console during xen boot  
+## Files  
+
+.log files are console output during xen boot  
 .txt files are the DT nodes used for the test  
-.debug shows output of addr2line  
+.debug files show addr2line command output  
 
 ## timer
 
@@ -18,5 +19,6 @@ ff08 : IRQ type level low
 ## gic
 
 meson   : currently upstream gic  
+
 400_c43 : gic: interrupt-controller@c4301000 {  compatible = "arm,gic-400";  
 400_2c  : gic: interrupt-controller@2c001000 {  compatible = "arm,gic-400";  
